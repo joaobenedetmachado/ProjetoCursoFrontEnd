@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        body {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            justify-content: column;
+        }
+
+        #main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        button {
+            height: 50px;
+            width: 100px;
+            background-color: red;
+            color: white;
+            font-size: 20px;
+        }
+
+        .girar {
+            animation: girar 2s linear infinite;
+        }
+
+        @keyframes girar {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <img height='400px' src="https://img.freepik.com/vetores-gratis/um-passeio-de-roda-gigante_1308-21345.jpg" alt="">
+        <h1>Clique aqui para girar a roda gigante!!</h1>
+        <button id='butao' onclick="girarRoda()">CLIQUE AQUI!</button>
+    </div>
+    <script>
+        function girarRoda() {
+            
+            const div = document.querySelector('#butao');
+            div.classList.add('girar');
+
+        }
+    </script>
+</body>
+</html>
