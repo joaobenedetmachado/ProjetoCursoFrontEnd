@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verificação</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="container mt-5">
+  <div class="form-group">
+    <input id="nome" type="text" class="form-control" placeholder="Nome:">
+  </div>
+  <div class="form-group">
+    <input id="endereco" type="text" class="form-control" placeholder="Endereco:">
+  </div>
+  <div class="form-group">
+    <input id="cep" type="number" class="form-control" placeholder="CEP:">
+  </div>
+  <div class="form-group">
+    <input id="telefone" type="text" onkeypress="mask(this, '## ####-####')" maxlength="12" class="form-control" placeholder="Telefone:">
+  </div>
+  <div class="form-group">
+    <input id="nascimento" type="date" class="form-control" placeholder="Nascimento:">
+  </div>
+  <div class="form-group">
+    <input id="cpf" onkeypress="mask(this, '###.###.###-##')" maxlength="14" type="text" class="form-control" placeholder="CPF:">
+  </div>
+  <div class="form-group">
+    <input id="rg" type="number" class="form-control" placeholder="RG:">
+  </div>
+  <button class="btn btn-primary" onclick="cadastrar()">Cadastrar</button>
+
+  <script>
+    function mask(t, mask) {
+      var i = t.value.length;
+      var exit = mask.substring(1, 0);
+      var text = mask.substring(i)
+      if (text.substring(0, 1) != exit) {
+        t.value += text.substring(0, 1);
+      }
+    }
+
+
+    function cadastrar() {
+      var nome = document.getElementById("nome").value;
+      var endereco = document.getElementById("endereco").value;
+      var cep = document.getElementById("cep").value;
+      var telefone = document.getElementById("telefone").value;
+      var nascimento = document.getElementById("nascimento").value;
+      var cpf = document.getElementById("cpf").value;
+      var rg = document.getElementById("rg").value;
+
+      if (nome.length == 0 ||
+        endereco.length == 0 ||
+        cep.length == 0 ||
+        telefone.length == 0 ||
+        nascimento.length == 0 ||
+        cpf.length == 0 ||
+        rg.length == 0) {
+        window.alert("alguma area ficou vazia!");
+      } else {
+        window.alert("cadastro realizado com sucesso!");
+      }
+    }
+  </script>
+</body>
+
+</html>
