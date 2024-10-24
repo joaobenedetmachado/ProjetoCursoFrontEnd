@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,19 +14,19 @@
     <input id="endereco" type="text" class="form-control" placeholder="Endereco:">
   </div>
   <div class="form-group">
-    <input id="cep" type="number" class="form-control" placeholder="CEP:">
+    <input id="cep" type="text" onkeypress="mask(this,'###-#####')" class="form-control" placeholder="CEP:">
   </div>
   <div class="form-group">
-    <input id="telefone" type="text" onkeypress="mask(this, '## ####-####')" maxlength="12" class="form-control" placeholder="Telefone:">
+    <input id="telefone" type="text" onkeypress="mask(this, '## #####-####')" maxlength="13" class="form-control" placeholder="Telefone:">
   </div>
   <div class="form-group">
-    <input id="nascimento" type="date" class="form-control" placeholder="Nascimento:">
+    <input id="nascimento" type="text" maxlength="10" onkeypress="mask(this, '####/##/##')" class="form-control" placeholder="Nascimento:">
   </div>
   <div class="form-group">
     <input id="cpf" onkeypress="mask(this, '###.###.###-##')" maxlength="14" type="text" class="form-control" placeholder="CPF:">
   </div>
   <div class="form-group">
-    <input id="rg" type="number" class="form-control" placeholder="RG:">
+    <input id="rg" type="text" onkeypress="mask(this, '###.###.###')" class="form-control" placeholder="RG:">
   </div>
   <button class="btn btn-primary" onclick="cadastrar()">Cadastrar</button>
 
